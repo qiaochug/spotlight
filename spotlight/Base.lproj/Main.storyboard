@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Baskerville.ttc">
+            <string>Baskerville</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -18,26 +23,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-aY-Y24">
-                                <rect key="frame" x="145" y="275" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPOTLIGHT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4C-rC-qPx">
+                                <rect key="frame" x="85" y="140" width="204" height="41"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQY-kr-fOk">
-                                <rect key="frame" x="262" y="331" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0f-Jd-fHk">
+                                <rect key="frame" x="30" y="326" width="315" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8rl-st-Kar"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="khZ-Fr-7WW"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGL-T0-4ds">
+                                <rect key="frame" x="30" y="449" width="315" height="30"/>
+                                <color key="backgroundColor" white="0.4970703125" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="X5S-0P-lCN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="20"/>
+                                <state key="normal" title="LOG IN">
+                                    <color key="titleColor" red="0.95547479150000003" green="0.99591159330000001" blue="0.82328431140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="ListPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FT2-TO-yJ4"/>
-                                    <segue destination="FOP-2M-jth" kind="presentation" id="2f3-CU-dwS"/>
+                                    <action selector="enterTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7BD-Xd-sy1"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-os-gxv">
+                                <rect key="frame" x="30" y="514" width="315" height="131"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2bJ-ji-GrQ">
+                                <rect key="frame" x="30" y="261" width="315" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7WC-Hr-u26"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Jgn-Gq-chQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ad-a4-R9C">
+                                <rect key="frame" x="30" y="521" width="315" height="35"/>
+                                <color key="backgroundColor" white="0.4970703125" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="uye-U7-MOd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="20"/>
+                                <state key="normal" title="START SPOTLIGHTING">
+                                    <color key="titleColor" red="0.95547479150000003" green="0.99591159330000001" blue="0.82328431140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Enter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kcz-4M-ROe"/>
+                                    <segue destination="FOP-2M-jth" kind="presentation" identifier="launch" id="QYd-nS-tf8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bN3-os-gxv" firstAttribute="leading" secondItem="8Ad-a4-R9C" secondAttribute="leading" id="4WZ-YV-dpt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bN3-os-gxv" secondAttribute="bottom" constant="22" id="7oh-cr-pHy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2bJ-ji-GrQ" secondAttribute="trailing" constant="30" id="Cg3-HQ-60h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xGL-T0-4ds" secondAttribute="trailing" constant="30" id="DCu-Eg-q56"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h0f-Jd-fHk" secondAttribute="trailing" constant="30" id="DVK-bg-Kiu"/>
+                            <constraint firstItem="xGL-T0-4ds" firstAttribute="centerX" secondItem="z4C-rC-qPx" secondAttribute="centerX" id="LH1-AG-KJe"/>
+                            <constraint firstItem="8Ad-a4-R9C" firstAttribute="top" secondItem="xGL-T0-4ds" secondAttribute="bottom" constant="42" id="LSS-8G-4V3"/>
+                            <constraint firstItem="bN3-os-gxv" firstAttribute="top" secondItem="xGL-T0-4ds" secondAttribute="bottom" constant="35" id="Mdo-9u-LSd"/>
+                            <constraint firstItem="bN3-os-gxv" firstAttribute="trailing" secondItem="8Ad-a4-R9C" secondAttribute="trailing" id="QTO-Nl-jHn"/>
+                            <constraint firstItem="2bJ-ji-GrQ" firstAttribute="top" secondItem="z4C-rC-qPx" secondAttribute="bottom" constant="80" id="U7e-gb-aj1"/>
+                            <constraint firstItem="xGL-T0-4ds" firstAttribute="centerY" secondItem="2bJ-ji-GrQ" secondAttribute="centerY" constant="188" id="Zbi-VR-rvx"/>
+                            <constraint firstItem="xGL-T0-4ds" firstAttribute="centerX" secondItem="2bJ-ji-GrQ" secondAttribute="centerX" id="alm-Lf-vH1"/>
+                            <constraint firstItem="xGL-T0-4ds" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="bV8-PA-25A"/>
+                            <constraint firstItem="z4C-rC-qPx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="oV1-8F-kig"/>
+                            <constraint firstItem="bN3-os-gxv" firstAttribute="trailing" secondItem="xGL-T0-4ds" secondAttribute="trailing" id="pRU-xi-osf"/>
+                            <constraint firstItem="h0f-Jd-fHk" firstAttribute="top" secondItem="2bJ-ji-GrQ" secondAttribute="bottom" constant="35" id="t5K-gh-6Al"/>
+                            <constraint firstItem="bN3-os-gxv" firstAttribute="leading" secondItem="xGL-T0-4ds" secondAttribute="leading" id="t9n-Ey-eh4"/>
+                            <constraint firstItem="2bJ-ji-GrQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="trD-cC-XHH"/>
+                            <constraint firstItem="h0f-Jd-fHk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="wrS-rw-3Q2"/>
+                            <constraint firstItem="h0f-Jd-fHk" firstAttribute="centerX" secondItem="2bJ-ji-GrQ" secondAttribute="centerX" id="wxE-4T-HfG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="h0f-Jd-fHk" id="bdq-UP-SZi"/>
+                        <outlet property="userNameField" destination="2bJ-ji-GrQ" id="jba-R6-zXr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

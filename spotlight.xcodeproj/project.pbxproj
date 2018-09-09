@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D5E2F0D214516950041DAA2 /* haha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E2F0C214516950041DAA2 /* haha.swift */; };
 		0D93D36E214468D1003218A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D93D36D214468D1003218A0 /* AppDelegate.swift */; };
 		0D93D370214468D1003218A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D93D36F214468D1003218A0 /* ViewController.swift */; };
 		0D93D373214468D1003218A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D93D371214468D1003218A0 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D5E2F0C214516950041DAA2 /* haha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = haha.swift; sourceTree = "<group>"; };
 		0D93D36A214468D1003218A0 /* spotlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D93D36D214468D1003218A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D93D36F214468D1003218A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				0D93D3DF21447DBB003218A0 /* CollectionViewController.swift */,
 				0D93D3E52144E27A003218A0 /* DetailViewController.swift */,
 				0D93D3E72144E63F003218A0 /* MenuViewController.swift */,
+				0D5E2F0C214516950041DAA2 /* haha.swift */,
 			);
 			path = spotlight;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				0D93D3E021447DBB003218A0 /* CollectionViewController.swift in Sources */,
 				0D93D3E82144E63F003218A0 /* MenuViewController.swift in Sources */,
 				0D93D376214468D1003218A0 /* spotlight.xcdatamodeld in Sources */,
+				0D5E2F0D214516950041DAA2 /* haha.swift in Sources */,
 				0D93D3E62144E27A003218A0 /* DetailViewController.swift in Sources */,
 				0D93D370214468D1003218A0 /* ViewController.swift in Sources */,
 				0D93D36E214468D1003218A0 /* AppDelegate.swift in Sources */,
