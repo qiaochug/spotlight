@@ -22,6 +22,8 @@ class MenuViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     var posts = [Post]()
     
+    let headerId = "headerId"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +52,8 @@ class MenuViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.backgroundColor = UIColor(white:1, alpha: 1)
         
         collectionView?.register(OptionCell.self, forCellWithReuseIdentifier: cellId)
+        
+        collectionView?.register(Header.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection numberOfItemInSection: Int) -> Int{
@@ -77,6 +81,40 @@ class MenuViewController: UICollectionViewController, UICollectionViewDelegateFl
         return 24
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 40)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! Header
+        return header
+    }
+    
+}
+
+class Header: UICollectionViewCell {
+    
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        fatalError("Init(coder:) has not been implemented")
+    }
+    
+    let searchbar: UISearchBar = {
+        let search = UISearchBar()
+        return search
+    }()
+    
+    func setupViews() {
+        
+        addSubview(searchbar)
+        
+        addConstraintsWithFormat(format: "H:|[v0]|", views: searchbar)
+    }
 }
 
 class OptionCell: UICollectionViewCell {

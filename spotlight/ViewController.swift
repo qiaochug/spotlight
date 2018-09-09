@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    @IBOutlet weak var textView: UITextView!
-    
     @IBAction func Enter(_ sender: Any) {
         print("enter button pressed")
         self.shouldPerformSegue(withIdentifier: "launch", sender: self)
@@ -26,11 +24,6 @@ class ViewController: UIViewController {
         passwordField.delegate = self
         
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func enterTapped(_ sender: Any) {
