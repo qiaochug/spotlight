@@ -8,14 +8,9 @@
 
 import UIKit
 
-let cellId = "cellId"
-
-class Post {
-    var name: String?
-    var statusText: String?
-}
-
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var navigationtitle_local = String()
     
     var posts = [Post]()
     
@@ -41,7 +36,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         posts.append(postSteve)
         posts.append(postGandhi)
         
-        navigationItem.title = "Facebook Feed"
+        navigationItem.title = navigationtitle_local
+        navigationtitle = navigationtitle_local
         
         collectionView?.alwaysBounceVertical = true
         
@@ -65,12 +61,20 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             
             let rect = NSString(string: statusText).boundingRect(with: CGSize(width: view.frame.width, height: 1000), options: NSStringDrawingOptions.usesFontLeading.union(NSStringDrawingOptions.usesLineFragmentOrigin), attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)], context: nil)
             
-            let knownHeight: CGFloat = 8+44+4+4+200+8+24
+            let knownHeight: CGFloat = 8+44+8+16
             
             return CGSize(width: view.frame.width, height: rect.height+knownHeight)
         }
         
         return CGSize(width: view.frame.width, height: 500)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+        
+        viewController.Keywords = posts[indexPath.item].name!
+        viewController.timeline = posts[indexPath.item].statusText!
+    self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
@@ -82,7 +86,7 @@ class FeedCell: UICollectionViewCell {
             if let name = post?.name{
                 let attributedText = NSMutableAttributedString(string: name, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
                 
-                attributedText.append(NSAttributedString(string: "\nDecember 10 * San Francisco * ", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: UIColor(red:115/255, green: 161/255, blue: 171/255, alpha: 1)]))
+                attributedText.append(NSAttributedString(string: "\nSource from the Guardian", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: UIColor(red:115/255, green: 161/255, blue: 171/255, alpha: 1)]))
                 
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.lineSpacing = 4
@@ -118,62 +122,25 @@ class FeedCell: UICollectionViewCell {
         let label = UILabel()
         label.numberOfLines = 2
         
-        
-        
         return label
-    }()
-    
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "zuckprofile")
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = UIColor.red
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
     }()
     
     let statusTextView: UITextView = {
         let textView = UITextView()
         textView.text = "Meanwhile, Beast turned to the dark side."
+        textView.isEditable = false
         textView.font = UIFont.systemFont(ofSize:14)
         return textView
-    }()
-    
-    let statusImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "zuckdog")
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        return imageView
     }()
     
     func setupViews() {
         backgroundColor = UIColor.white
         
         addSubview(nameLabel)
-        addSubview(profileImageView)
         addSubview(statusTextView)
-        addSubview(statusImageView)
         
-        addConstraintsWithFormat(format: "H:|-8-[v0(44)]-8-[v1]", views: profileImageView,nameLabel)
+        addConstraintsWithFormat(format: "H:|-8-[v0]", views: nameLabel)
         addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: statusTextView)
-        addConstraintsWithFormat(format: "H:|[v0]|", views: statusImageView)
-        addConstraintsWithFormat(format: "V:|-12-[v0]", views: nameLabel)
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1]-4-[v2(200)]|", views: profileImageView, statusTextView, statusImageView)
+        addConstraintsWithFormat(format: "V:|-12-[v0(44)]-8-[v1]|", views: nameLabel, statusTextView)
     }
 }
-
-extension UIView {
-    func addConstraintsWithFormat(format: String, views: UIView...){
-        var viewsDictionary = [String: UIView]()
-        for (index, view) in views.enumerated() {
-            let key = "v\(index)"
-            viewsDictionary[key] = view
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-    
-}
-

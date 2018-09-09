@@ -16,6 +16,8 @@
 		0D93D386214468D1003218A0 /* spotlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D93D385214468D1003218A0 /* spotlightTests.swift */; };
 		0D93D391214468D1003218A0 /* spotlightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D93D390214468D1003218A0 /* spotlightUITests.swift */; };
 		0D93D3E021447DBB003218A0 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D93D3DF21447DBB003218A0 /* CollectionViewController.swift */; };
+		0D93D3E62144E27A003218A0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D93D3E52144E27A003218A0 /* DetailViewController.swift */; };
+		0D93D3E82144E63F003218A0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D93D3E72144E63F003218A0 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		0D93D390214468D1003218A0 /* spotlightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotlightUITests.swift; sourceTree = "<group>"; };
 		0D93D392214468D1003218A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D93D3DF21447DBB003218A0 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		0D93D3E52144E27A003218A0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0D93D3E72144E63F003218A0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				0D93D37C214468D1003218A0 /* Info.plist */,
 				0D93D374214468D1003218A0 /* spotlight.xcdatamodeld */,
 				0D93D3DF21447DBB003218A0 /* CollectionViewController.swift */,
+				0D93D3E52144E27A003218A0 /* DetailViewController.swift */,
+				0D93D3E72144E63F003218A0 /* MenuViewController.swift */,
 			);
 			path = spotlight;
 			sourceTree = "<group>";
@@ -266,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D93D3E021447DBB003218A0 /* CollectionViewController.swift in Sources */,
+				0D93D3E82144E63F003218A0 /* MenuViewController.swift in Sources */,
 				0D93D376214468D1003218A0 /* spotlight.xcdatamodeld in Sources */,
+				0D93D3E62144E27A003218A0 /* DetailViewController.swift in Sources */,
 				0D93D370214468D1003218A0 /* ViewController.swift in Sources */,
 				0D93D36E214468D1003218A0 /* AppDelegate.swift in Sources */,
 			);
